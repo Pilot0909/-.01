@@ -206,4 +206,18 @@ if __name__ == "__main__":
     test_heap.extract_min()
     print(f"  После extract_min(): корректна = {test_heap.is_valid_heap()}")
 
+def insert(self, value):
+        self.heap.append(value)
+        self._heapify_up(len(self.heap) - 1)
+        return self.is_valid_heap()
 
+
+def extract_min(self):
+        if not self.heap:
+            return None
+        if len(self.heap) == 1:
+            return self.heap.pop()
+        min_val = self.heap[0]
+        self.heap[0] = self.heap.pop()
+        self._heapify_down(0)
+        return min_val, self.is_valid_heap()

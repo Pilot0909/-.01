@@ -232,3 +232,6 @@ if __name__ == "__main__":
         print(f"\nМассив: {arr}, k={k_val}")
         print(f"Результат: {result}")
 
+def push(self, value, priority):
+        self.heap.append((priority, value))
+        self._heapify_up(len(self.heap) - 1)
